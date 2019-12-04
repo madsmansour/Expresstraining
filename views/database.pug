@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    form(method="post" action='/database/create')
+        h1 Create the database:
+        br
+        input(type='submit', value='Submit')
+    br
+    
+    form(method="post" action='/database/append')
+        h1 append the table:
+        br
+        input(type='submit', value='Submit')
+
+    #showdata
+        if (data)
+            table(style='width:100%', border='1')
+                thead
+                    tr
+                        th name
+                        th levelreq
+                tbody
+                    each val in data
+                        tr
+                            td #{val.name}
+                            td #{val.levelreq}
+                  
